@@ -30,6 +30,9 @@ class CharacterItem extends StatelessWidget {
                 imageUrl: characterEntity.image!,
                 height: 80,
                 width: 80,
+                errorWidget: (context, url, error) {
+                  return Image.asset('assets/images/default.jpg');
+                },
               ),
             ),
             const SizedBox(

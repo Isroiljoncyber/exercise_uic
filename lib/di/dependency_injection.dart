@@ -19,7 +19,6 @@ import 'package:exercise_uic/features/characters/domain/usecases/usecase_all_cha
 import 'package:exercise_uic/features/characters/presentation/bloc/all_characters_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -47,7 +46,7 @@ init() async {
   di.registerLazySingleton<CharacterInfoRemote>(() => CharacterInfoRemoteImpl(di()));
   di.registerLazySingleton<CharacterInfoLocal>(() => CharacterInfoLocalImpl());
 
-  // usecases
+  // use cases
   di.registerLazySingleton(() => UsesCaseAllCharacters(di()));
   di.registerLazySingleton(() => UsesCaseCharacterInfo(di()));
 
